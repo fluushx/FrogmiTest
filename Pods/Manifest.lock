@@ -1,0 +1,20 @@
+PODS:
+  - HGPlaceholders (0.5.0)
+  - ViewAnimator (3.1.0)
+
+DEPENDENCIES:
+  - HGPlaceholders
+  - ViewAnimator
+
+SPEC REPOS:
+  trunk:
+    - HGPlaceholders
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  HGPlaceholders: cbf8caed8360fc2ab5e8a4610cce61f76fbd2c37
+  ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
+
+PODFILE CHECKSUM: 523974b80cf26209934507f10a898b9c96a3ae6e
+
+COCOAPODS: 1.11.2
