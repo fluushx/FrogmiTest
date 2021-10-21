@@ -7,6 +7,8 @@
 import Foundation
 import HGPlaceholders
 import ViewAnimator
+
+//MARK: - APICaller
 class APICaller {
     
     func fecthData ( completion: @escaping (Result<ResultData, Error>) -> Void){

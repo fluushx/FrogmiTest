@@ -8,6 +8,7 @@ import Foundation
 import HGPlaceholders
 import ViewAnimator
 
+//MARK: - ViewController
 class ViewController: UIViewController{
 
  
@@ -23,7 +24,7 @@ class ViewController: UIViewController{
         
         return tableVew
     }()
-    
+    //MARK: - createSpinerFooter
     private func createSpinerFooter()->UIView{
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
         
@@ -34,6 +35,7 @@ class ViewController: UIViewController{
         
         return footerView
     }
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
@@ -43,12 +45,12 @@ class ViewController: UIViewController{
         tableView.showLoadingPlaceholder()
    
     }
-    
+    //MARK: - animation
     func animation(){
         let animation = AnimationType.from(direction: .top, offset: 200)
         UIView.animate(views:tableView.visibleCells,animations: [animation])
     }
-    
+    //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setUpTableView()
@@ -73,7 +75,7 @@ class ViewController: UIViewController{
     })
         
 }
-    
+    //MARK: - setUpTableView
     private func setUpTableView(){
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -85,10 +87,10 @@ class ViewController: UIViewController{
  
      
 }
-
+//MARK: - Extension ViewController
 extension ViewController:UITableViewDelegate, UITableViewDataSource {
 
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         resultDatum.count
     }
@@ -109,6 +111,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    //MARK: - scrollViewDidScroll
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         let position = scrollView.contentOffset.y

@@ -5,15 +5,17 @@
 
 import UIKit
 
+//MARK: - TableViewCell
 class TableViewCell: UITableViewCell {
     
-    
+    //MARK: - identifier of TableViewCell
     static let identifier = "cell"
     
     public func nib() ->UINib {
         return UINib(nibName: "cell", bundle: nil)
     }
     
+    //MARK: - typeLabel
     var typeLabel : UILabel = {
        let textoLabel = UILabel()
         textoLabel.textColor = .black
@@ -24,7 +26,7 @@ class TableViewCell: UITableViewCell {
         textoLabel.font = UIFont.systemFont(ofSize: 14.0)
         return textoLabel
     }()
-    
+    //MARK: - direccionLabel
     var direccionLabel : UILabel = {
        let direccionLabel = UILabel()
         direccionLabel.textColor = .black
@@ -35,7 +37,7 @@ class TableViewCell: UITableViewCell {
         direccionLabel.font = UIFont.systemFont(ofSize: 15.0)
         return direccionLabel
     }()
-    
+    //MARK: - codeLabel
     var codeLabel : UILabel = {
        let codeLabel = UILabel()
         codeLabel.textColor = .black
@@ -46,7 +48,7 @@ class TableViewCell: UITableViewCell {
         codeLabel.font = UIFont.systemFont(ofSize: 15.0)
         return codeLabel
     }()
-    
+    //MARK: - setUpView
     func setUpView(){
         contentView.addSubview(typeLabel)
         contentView.addSubview(direccionLabel)
@@ -56,7 +58,6 @@ class TableViewCell: UITableViewCell {
         typeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         typeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -300).isActive = true
         typeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50).isActive = true
-        
     
         direccionLabel.topAnchor.constraint(equalTo: typeLabel.bottomAnchor, constant: 10).isActive = true
         direccionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
@@ -65,14 +66,11 @@ class TableViewCell: UITableViewCell {
         codeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         codeLabel.leadingAnchor.constraint(equalTo: typeLabel.trailingAnchor, constant: 10).isActive = true
         codeLabel.bottomAnchor.constraint(equalTo: direccionLabel.topAnchor, constant: -10).isActive = true
-        
-        
     }
-    
+    //MARK: - layoutSubviews
     override func layoutSubviews() {
         super.layoutSubviews()
         setUpView()
-        
     }
 
 }
